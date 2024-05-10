@@ -1,12 +1,16 @@
+#Import pandas for data manipulation using dataframes
 import pandas as pd
+
+#Read in dataset
 df = pd.read_csv("iris.csv")
-print(df)
-print(df.describe())
+
+#Frequencies for categorical variables
 species_count = df["species"].value_counts()
-print(species_count)
+
+#Descriptives for scale variables 
 descriptives = df.describe()
 
-print(descriptives)
+#Write contents of descriptives and species count dataframes to txt file- https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file
 with open ("iris_summary.txt", "a") as f:
            f.write(descriptives.to_string())
            f.write("\n")
