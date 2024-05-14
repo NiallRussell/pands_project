@@ -29,15 +29,27 @@ petal_length = df["petal_length"].to_numpy()
 petal_width = df["petal_width"].to_numpy()
 
 plt.hist(sepal_length)
+plt.xlabel("Sepal Length (cm)")
+plt.ylabel("Frequency")
 plt.savefig('sepal_length.png')
 plt.close()
+
 plt.hist(sepal_width)
+plt.xlabel("Sepal Width (cm)")
+plt.ylabel("Frequency")
 plt.savefig('sepal_width.png')
 plt.close()
+
 plt.hist(petal_length)
+plt.xlabel("Petal Length (cm)")
+plt.ylabel("Frequency")
 plt.savefig('petal_length.png')
 plt.close()
+
 plt.hist(petal_width)
+plt.xlabel("Petal Width (cm)")
+plt.ylabel("Frequency")
 plt.savefig('petal_width.png')
 plt.close()
+
 #https://stackoverflow.com/questions/9622163/save-plot-to-image-file-instead-of-displaying-it
