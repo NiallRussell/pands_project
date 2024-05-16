@@ -12,6 +12,8 @@ df = pd.read_csv("iris.csv")
 
 #Changing column names for readability when displaying stats- https://stackoverflow.com/questions/11346283/renaming-column-names-in-pandas 
 df_upper = df.rename(columns={"sepal_length": "Sepal Length", "sepal_width": "Sepal Width", "petal_length": "Petal Length", "petal_width": "Petal Width", "species": "Species"})
+# Capitalising values for Species for display purposes- https://www.geeksforgeeks.org/string-capitalize-python/
+df_upper["Species"] = df_upper["Species"].str.capitalize()
 
 #Frequencies for categorical variables
 species_count = df_upper["Species"].value_counts()
@@ -72,7 +74,7 @@ pd.DataFrame.iteritems = pd.DataFrame.items
     #x.str.title()
     #x.str.replace("_"," ")
 
-fig = px.scatter_matrix(df, 
+fig = px.scatter_matrix(df_upper, 
                         dimensions=["Sepal Width", "Sepal Length", "Petal Width", "Petal Length"], 
                         color="Species")
                         #labels = df.apply(col_labels, axis = 1))
