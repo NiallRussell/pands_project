@@ -12,19 +12,25 @@ df = pd.read_csv("iris.csv")
 
 #Changing column names for readability when displaying stats- https://stackoverflow.com/questions/11346283/renaming-column-names-in-pandas 
 df_upper = df.rename(columns={"sepal_length": "Sepal Length", "sepal_width": "Sepal Width", "petal_length": "Petal Length", "petal_width": "Petal Width", "species": "Species"})
+
 # Capitalising values for Species for display purposes- https://www.geeksforgeeks.org/string-capitalize-python/
 df_upper["Species"] = df_upper["Species"].str.capitalize()
 
 #Frequencies for categorical variables
 species_count = df_upper["Species"].value_counts()
+
 #Capitalizing the index for diplay purposes- applied capitalize method similar to index manipulation here: https://stackoverflow.com/questions/30576323/pandas-convert-index-values-to-lowercase
 species_count.index = species_count.index.str.capitalize()
 
 #Descriptives for scale variables 
 descriptives = df_upper.describe()
+
 #Capitalizing index and removing abbreviation for display purposes- https://pandas.pydata.org/docs/reference/api/pandas.Series.str.replace.html
 descriptives.index = descriptives.index.str.capitalize()
 descriptives.index = descriptives.index.str.replace("Std", "Standard Deviation")
+
+#Rounding to 3 decimal places for readability- https://www.tutorialspoint.com/How-to-round-down-to-2-decimals-a-float-using-Python
+descriptives = round(descriptives, 3)
 
 #Write contents of descriptives and species count dataframes to txt file- https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file
 with open ("iris_summary.txt", "w") as f:
@@ -75,7 +81,6 @@ fig = px.scatter_matrix(df_upper,
 fig.show()
 
 #One-way ANOVA to determine significant difference in petal length across species- https://www.pythonfordatascience.org/anova-python/
-
 import scipy.stats as stats
 
 #Testing assumption of normal distribution-  https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html
