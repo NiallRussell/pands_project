@@ -69,19 +69,25 @@ import plotly.express as px
 #Workaround for px plot not working with Pandas 2.0- https://community.plotly.com/t/scatter-matrix-with-plotly-express-does-not-work-with-pandas-2-0/77695
 pd.DataFrame.iteritems = pd.DataFrame.items
 
-#labels = col:col.replace('_', ' ') for col in df.columns#
-#def col_labels(x):
-    #x.str.title()
-    #x.str.replace("_"," ")
-
 fig = px.scatter_matrix(df_upper, 
                         dimensions=["Sepal Width", "Sepal Length", "Petal Width", "Petal Length"], 
                         color="Species")
-                        #labels = df.apply(col_labels, axis = 1))
-                        #labels = {col:col.apply(col_labels) for col in df.columns})
-                        #labels={col:col.replace('_', ' ') for col in df.columns})
 fig.show()
 
+#One-way ANOVA to determine significant difference in petal length across species- https://www.pythonfordatascience.org/anova-python/
 
-#https://www.geeksforgeeks.org/python-pandas-apply/
+import scipy.stats as stats
 
+#Testing assumption of normal distribution-  https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html
+print(stats.shapiro(df["petal_length"]))
+
+#Testing assumption of homogeneity of variances-
+#pl_setosa = np.array(df[df["petal_length"])
+#pl_versicolor =
+#pl_verginica = 
+
+one_way = stats.f_oneway(df['petal_length'][df['species'] == 'setosa'],
+               df['petal_length'][df['species'] == 'versicolor'],
+               df['petal_length'][df['species'] == 'virginica'])
+
+print(one_way)
