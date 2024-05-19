@@ -96,6 +96,10 @@ fig = px.scatter_matrix(df_upper,
                         color="Species")
 fig.show()
 
+#Correlation matrix- https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html
+corr = df_upper.corr(numeric_only=True)
+print(corr)
+
 #One-way ANOVA to determine significant difference in petal length across species- https://www.pythonfordatascience.org/anova-python/
 import scipy.stats as stats
 
