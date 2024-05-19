@@ -23,7 +23,14 @@ Finally, a Kruskal-Wallis test is presented to examine the difference in petal l
 
 ## Guide to Analyses
 ### *Histograms*
-Histograms are presented for each of the four scale variables: petal length, petal width, sepal length and sepal width. The bins are grouped by species to visualise the difference in distributions across species 
+Histograms are presented for each of the four scale variables: petal length, petal width, sepal length and sepal width. The bins are grouped by species to visualise the difference in distributions across species.
+
+Looking at the petal length and petal width histograms, we can see that the distribution of the Setosa flowers do not overlap with the other two species, with the values confined to the lower end of the scale. 
+
+The number of bins was set to 40 to allow for a clearer visual of the distribution of each species. Here, we can see that the distribution of petal width in Setosa flowers are positively skewed. Similarly, the distribution of petal length in Versicolor flowers shows a negative skew. 
+
+On the whole, the histograms, with the exeption of sepal width, reveal that the data are not normally distributed. This is important to consider when selecting the appropriate analyses. 
+
 ### *Scatterplot*
 
 The scatterplot matrix provides a visualisation of the relationship between each scale variable. Together with the correlation matrix, it is shown that sepal width is negatively correlated with sepal length, petal length and petal width; petal length is positively correlated with sepal length and petal width; and petal width is correlated positively with sepal length.
