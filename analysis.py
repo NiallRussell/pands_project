@@ -91,15 +91,15 @@ print(stats.shapiro(df["petal_length"]))
 
 
 #Extracting petal length values of each species- https://sparkbyexamples.com/pandas/pandas-extract-column-value-based-on-another-column
-df_setosa = df.query("species == 'setosa'")["petal_length"]
-df_versicolor = df.query("species == 'versicolor'")["petal_length"]
-df_verginica = df.query("species == 'versicolor'")["petal_length"]
+pl_setosa = df.query("species == 'setosa'")["petal_length"]
+pl_versicolor = df.query("species == 'versicolor'")["petal_length"]
+pl_virginica = df.query("species == 'virginica'")["petal_length"]
 
 #Levene's test
-print(stats.levene(df_setosa, df_versicolor, df_verginica))
+print(stats.levene(pl_setosa, pl_versicolor, pl_virginica))
 
 #Examining variances of each group
-print(np.var(df_setosa), np.var(df_versicolor), np.var(df_verginica))
+print(np.var(pl_setosa), np.var(pl_versicolor), np.var(pl_virginica))
 
 #Kruskal-Wallis test- https://www.statology.org/kruskal-wallis-test-python/
 kruskal_petal_length = stats.kruskal(df['petal_length'][df['species'] == 'setosa'],
@@ -107,3 +107,4 @@ kruskal_petal_length = stats.kruskal(df['petal_length'][df['species'] == 'setosa
                df['petal_length'][df['species'] == 'virginica'])
 
 print(kruskal_petal_length)
+
