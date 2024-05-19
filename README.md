@@ -28,6 +28,9 @@ The variances of each of the three petal length samples were examined and as the
 
 As the p-value of the Kruskal-Wallis statistic is less than .05, the null hypothesis that median petal length is the same for all three species- https://www.statology.org/kruskal-wallis-test-python/
 
+Dunn's test was performed for post-hoc comparisons- https://www.statology.org/dunns-test-python/
+As the p-value for each pair of comparisons was below .05, there is a significant difference in petal length across the three species 
+
 ## Getting Started
 
 ## Getting Help

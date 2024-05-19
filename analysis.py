@@ -24,19 +24,35 @@ species_count.index = species_count.index.str.capitalize()
 
 #Descriptives for scale variables 
 descriptives = df_upper.describe()
+descriptives_by_species = df_upper.groupby("Species").describe()
 
 #Capitalizing index and removing abbreviation for display purposes- https://pandas.pydata.org/docs/reference/api/pandas.Series.str.replace.html
 descriptives.index = descriptives.index.str.capitalize()
 descriptives.index = descriptives.index.str.replace("Std", "Standard Deviation")
+
+descriptives_by_species.index = descriptives_by_species.index.str.capitalize()
+
+#As species becomes the index when grouping by species, standard deviation is a column name 
+#and can't be renamed with string replace: https://stackoverflow.com/questions/19758364/rename-specific-columns-in-pandas
+descriptives_by_species = descriptives_by_species.rename(columns = {"std":"Standard Deviation"})
 
 #Rounding to 3 decimal places for readability- https://www.tutorialspoint.com/How-to-round-down-to-2-decimals-a-float-using-Python
 descriptives = round(descriptives, 3)
 
 #Write contents of descriptives and species count dataframes to txt file- https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file
 with open ("iris_summary.txt", "w") as f:
+           f.write("Summary of Descriptives") 
+           f.write("\n\n")
            f.write(descriptives.to_string())
            f.write("\n\n")
+           f.write ("Species Count")
+           f.write("\n\n")
            f.write(species_count.to_string())
+           f.write("\n\n")
+           f.write("Descriptives by Species")
+           f.write("\n\n")
+           f.write(descriptives_by_species.to_string())
+           
 
 #Converting dataframe columns to numpy arrays for histograms
 sepal_length = df["sepal_length"].to_numpy()
@@ -108,3 +124,9 @@ kruskal_petal_length = stats.kruskal(df['petal_length'][df['species'] == 'setosa
 
 print(kruskal_petal_length)
 
+#Dunn's test for posthoc comparisons - https://www.statology.org/dunns-test-python/
+import scikit_posthocs as sp
+
+pl_by_species = [pl_setosa, pl_versicolor, pl_virginica]
+
+print(sp.posthoc_dunn(pl_by_species, p_adjust = 'bonferroni'))
