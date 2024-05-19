@@ -61,25 +61,26 @@ petal_length = df["petal_length"].to_numpy()
 petal_width = df["petal_width"].to_numpy()
 
 #Saving histograms to PNG files- https://stackoverflow.com/questions/9622163/save-plot-to-image-file-instead-of-displaying-it
-plt.hist(sepal_length)
+#Grouping by species- https://www.geeksforgeeks.org/how-to-fill-color-by-groups-in-histogram-using-matplotlib/
+df_upper.pivot(columns='Species', values='Sepal Length').plot.hist()
 plt.xlabel("Sepal Length (cm)")
 plt.ylabel("Frequency")
 plt.savefig('sepal_length.png')
 plt.close()
 
-plt.hist(sepal_width)
+df_upper.pivot(columns='Species', values='Sepal Width').plot.hist()
 plt.xlabel("Sepal Width (cm)")
 plt.ylabel("Frequency")
 plt.savefig('sepal_width.png')
 plt.close()
 
-plt.hist(petal_length)
+df_upper.pivot(columns='Species', values='Petal Length').plot.hist()
 plt.xlabel("Petal Length (cm)")
 plt.ylabel("Frequency")
 plt.savefig('petal_length.png')
 plt.close()
 
-plt.hist(petal_width)
+df_upper.pivot(columns='Species', values='Petal Width').plot.hist()
 plt.xlabel("Petal Width (cm)")
 plt.ylabel("Frequency")
 plt.savefig('petal_width.png')
