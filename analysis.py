@@ -62,25 +62,25 @@ petal_width = df["petal_width"].to_numpy()
 
 #Saving histograms to PNG files- https://stackoverflow.com/questions/9622163/save-plot-to-image-file-instead-of-displaying-it
 #Grouping by species- https://www.geeksforgeeks.org/how-to-fill-color-by-groups-in-histogram-using-matplotlib/
-df_upper.pivot(columns='Species', values='Sepal Length').plot.hist()
+df_upper.pivot(columns='Species', values='Sepal Length').plot.hist(alpha = .5, color = ["lawngreen", "cyan", "lightcoral"], edgecolor = "white")
 plt.xlabel("Sepal Length (cm)")
 plt.ylabel("Frequency")
 plt.savefig('sepal_length.png')
 plt.close()
 
-df_upper.pivot(columns='Species', values='Sepal Width').plot.hist()
+df_upper.pivot(columns='Species', values='Sepal Width').plot.hist(alpha = .5, color = ["lawngreen", "cyan", "lightcoral"], edgecolor = "white")
 plt.xlabel("Sepal Width (cm)")
 plt.ylabel("Frequency")
 plt.savefig('sepal_width.png')
 plt.close()
 
-df_upper.pivot(columns='Species', values='Petal Length').plot.hist()
+df_upper.pivot(columns='Species', values='Petal Length').plot.hist(alpha = .5, color = ["lawngreen", "cyan", "lightcoral"], edgecolor = "white")
 plt.xlabel("Petal Length (cm)")
 plt.ylabel("Frequency")
 plt.savefig('petal_length.png')
 plt.close()
 
-df_upper.pivot(columns='Species', values='Petal Width').plot.hist()
+df_upper.pivot(columns='Species', values='Petal Width').plot.hist(alpha = .5, color = ["lawngreen", "cyan", "lightcoral"], edgecolor = "white")
 plt.xlabel("Petal Width (cm)")
 plt.ylabel("Frequency")
 plt.savefig('petal_width.png')
