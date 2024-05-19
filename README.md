@@ -22,11 +22,15 @@ Scatter plots help to visualise the association between variable pairs, and a sc
 Finally, a Kruskal-Wallis test is presented to examine the difference in petal length across species, and Dunn's test is presented to examine comparisons across each pair of species.
 
 ## Guide to Analyses
+### *Histograms*
+Histograms are presented for each of the four scale variables: petal length, petal width, sepal length and sepal width. The bins are grouped by species to visualise the difference in distributions across species 
+### *Scatterplot*
 
 The scatterplot matrix provides a visualisation of the relationship between each scale variable. Together with the correlation matrix, it is shown that sepal width is negatively correlated with sepal length, petal length and petal width; petal length is positively correlated with sepal length and petal width; and petal width is correlated positively with sepal length.
 
 The scatterplot matrix also highlights the values for each species and there are clear clusters visible across species, suggesting a difference in values across species. For example, petal length and sepal length are notably lower for Setosa flowers than other species. A positive trend can be seen when examining Versicolor and Virginica data points. Indeed, the correlation coefficient of .82 for this pairing suggests a strong, positive correlation (although the statistical significance is not known as p-values were not computed for the correlations). It is not clear from looking at the scatter plot whether this correlation would be observed in the Setosa species alone. This project provides a good starting point for researchers looking to further examine the associations between measures across species.
 
+### *Kruskal-Wallis Test*
 A one way ANOVA to examine differences in petal length across species was intended, and the assumptions of normal distribution and homogeneity of variances were tested- https://statistics.laerd.com/spss-tutorials/one-way-anova-using-spss-statistics.php
 
 As the p-value of the Shapiro-Wilk test is below .05, the assumption of normal distribution is violated 
