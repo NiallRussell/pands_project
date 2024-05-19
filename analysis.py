@@ -86,13 +86,24 @@ import scipy.stats as stats
 #Testing assumption of normal distribution-  https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html
 print(stats.shapiro(df["petal_length"]))
 
-#Testing assumption of homogeneity of variances-
-#pl_setosa = np.array(df[df["petal_length"])
-#pl_versicolor =
-#pl_verginica = 
+#Testing assumption of homogeneity of variances- https://statistics.laerd.com/spss-tutorials/one-way-anova-using-spss-statistics.php
+                                                #https://www.statology.org/levenes-test-python/
 
-one_way = stats.f_oneway(df['petal_length'][df['species'] == 'setosa'],
+
+#Extracting petal length values of each species- https://sparkbyexamples.com/pandas/pandas-extract-column-value-based-on-another-column
+df_setosa = df.query("species == 'setosa'")["petal_length"]
+df_versicolor = df.query("species == 'versicolor'")["petal_length"]
+df_verginica = df.query("species == 'versicolor'")["petal_length"]
+
+#Levene's test
+print(stats.levene(df_setosa, df_versicolor, df_verginica))
+
+#Examining variances of each group
+print(np.var(df_setosa), np.var(df_versicolor), np.var(df_verginica))
+
+#Kruskal-Wallis test- https://www.statology.org/kruskal-wallis-test-python/
+kruskal_petal_length = stats.kruskal(df['petal_length'][df['species'] == 'setosa'],
                df['petal_length'][df['species'] == 'versicolor'],
                df['petal_length'][df['species'] == 'virginica'])
 
-print(one_way)
+print(kruskal_petal_length)

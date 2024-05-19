@@ -19,6 +19,15 @@ Scatter plots help to visualise the association between variable pairs, and a sc
 
 OTHER ANALYSIS
 
+Assumptions- https://statistics.laerd.com/spss-tutorials/one-way-anova-using-spss-statistics.php
+
+As the p-value of the Shapiro-Wilk test is below .05, the assumption of normal distribution is violated 
+
+As the p-value of Levene's test is below .05 the assumption of homogeneity of variances is violated
+The variances of each of the three petal length samples were examined and as the largest variances is more than 4 times the smallest variance, a Kruskal-Wallis test was performed instead of a one way ANOVA- https://www.statology.org/brown-forsythe-test-in-python/
+
+As the p-value of the Kruskal-Wallis statistic is less than .05, the null hypothesis that median petal length is the same for all three species- https://www.statology.org/kruskal-wallis-test-python/
+
 ## Getting Started
 
 ## Getting Help
