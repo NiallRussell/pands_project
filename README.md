@@ -44,12 +44,24 @@ As the p-value of the Kruskal-Wallis statistic is less than .05, the null hypoth
 Dunn's test was performed for post-hoc comparisons- https://www.statology.org/dunns-test-python/
 As the p-value for each pair of comparisons was below .05, there is a significant difference in petal length across the three species.
 
-Examining the petal length means across species in the txt file, we can conclude that Setosa flowers have, on average, siginficantly shorter petals than Versicolor and Virginica flowers; Versicolor flowers have significantly longer petals than Setosa plants and significantly shorter petals than Virginica flowers; and Virginica flowers have significantly longr petals than both Versicolor and Setosa flowers
+Examining the petal length means across species in the txt file, we can conclude that Setosa flowers have, on average, siginficantly shorter petals than Versicolor and Virginica flowers; Versicolor flowers have significantly longer petals than Setosa plants and significantly shorter petals than Virginica flowers; and Virginica flowers have significantly longr petals than both Versicolor and Setosa flowers.
 
+## Output
+When the programme is run, the following occurs:
+1. A txt file is created containing a summary of descriptive statistics
+2. Histograms are created for each of the four scale variables, grouped by species, and saved to .png files
+3. A scatterplot matrix of relationships between the four scale variables is presented, grouped by species
+4. A corelation matrix is presented to show the strength of relationships across the four scale variables
+5. The Shapiro-Wilk statistic and corresponding p-value is presented for petal length
+6. The Levene test statistic and corresponding p-value is presented for petal length, grouped by species
+7. For each sample of petal length values (grouped by species), the variance is presented
+8. The Kruskal-Wallis statistic and corresponding p-value is presented for 
 
 ## Getting Help
 Please contact the author at g00439452@atu.ie
 
 ## Contribute
+To contribute to this project, please contact the author at g00439452@atu.ie
+
 ## Author
 Niall Russell
