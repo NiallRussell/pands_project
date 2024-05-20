@@ -41,16 +41,11 @@ descriptives = round(descriptives, 3)
 
 #Write contents of descriptives and species count dataframes to txt file- https://stackoverflow.com/questions/51829923/write-a-pandas-dataframe-to-a-txt-file
 with open ("iris_summary.txt", "w") as f:
-           f.write("Summary of Descriptives") 
-           f.write("\n\n")
+           f.write("Summary of Descriptives\n\n") 
            f.write(descriptives.to_string())
-           f.write("\n\n")
-           f.write ("Species Count")
-           f.write("\n\n")
+           f.write ("\n\nSpecies Count\n\n")
            f.write(species_count.to_string())
-           f.write("\n\n")
-           f.write("Descriptives by Species")
-           f.write("\n\n")
+           f.write("\n\nDescriptives by Species\n\n")
            f.write(descriptives_by_species.to_string())
            
 

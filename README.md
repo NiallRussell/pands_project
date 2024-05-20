@@ -57,7 +57,7 @@ Examining the petal length means across species in the .txt file, we can conclud
 
 ## Output
 When the programme is run, the following occurs:
-1. A txt file is created containing a summary of descriptive statistics
+1. A .txt file is created containing a summary of descriptive statistics
 2. Histograms are created for each of the four scale variables, grouped by species, and saved to .png files
 3. A scatterplot matrix of relationships between the four scale variables is presented, grouped by species
 4. A corelation matrix is presented to show the strength of relationships across the four scale variables
